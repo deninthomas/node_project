@@ -1,0 +1,187 @@
+<form class="edit-employee-form" id="openEditForm" action="/api/employees" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col bg-white p-4 rounded-5 mt-3 mb-3">
+            <div><button type="button" class="close-button close-button-position-form position-absolute" id="editCloseBtn"
+                    onclick="closeEditEmployeeForm()"><i class="material-symbols-outlined">
+                        close
+                    </i></button></div>
+            <h3>Edit Employee</h3>
+            <div class="row d-flex align-items-center">
+                <div class="col-md-3">
+                   
+                        <div
+                            class="edit-upload-image position-relative form-group col-md-1 d-flex align-items-center justify-content-center">
+                            <input type="file" name="image" accept="image/*" id="editForm-input-file" hidden src="/uploads/">
+                            <div class="editCard align-items-center rounded-4" id="editForm-img-view">
+                                <!-- Add an empty img tag to display the selected image -->
+                                <img id="image-preview" alt="">
+                            </div>
+                        </div>
+                  
+                </div>
+                <div class="col-md-1">
+                    <button class="change-btn" onclick="changeImage(event)"> <label for="editForm-input-file" id="editForm-drop-area">Change</label></button>
+                </div>
+            </div>
+
+            <!-- <div class="d-flex align-items-center gap-3 flex-row">
+                <div class="edit-upload-image position-relative form-group col-md-1 d-flex align-items-center justify-content-center">
+                    <img src="Images/edit.png" alt="" />
+                </div>
+                <button class="change-btn">Change</button>
+            </div> -->
+            <div class="row mt-4">
+                <div class="col-md-2 form-group">
+                    <label for="editSelect" class="required">Salutation</label>
+                    <select class="form-select form-control rounded-4 mt-3" id="editSelect">
+                        <option value="Mr.">Mr.</option>
+                        <option value="
+              Mrs.">Mrs.</option>
+                    </select>
+                </div>
+                <div class="col-md-5 form-group">
+                    <label class="required" for="editFirstName">First Name</label>
+                    <input type="text" id="editFirstName" class="form-control rounded-4 opacity-50 mt-3"
+                        placeholder="enter first name">
+                </div>
+                <div class="col-md-5 form-group">
+                    <label class="required" for="editLastName">Last Name</label>
+                    <input type="text" id="editLastName" class="form-control rounded-4 opacity-50 mt-3"
+                        placeholder="enter last name">
+                </div>
+            </div>
+
+            <div class="row mt-4 second-row">
+                <div class="col-md-6">
+                    <label for="editEmail" class="required">Email Address</label>
+                    <input type="email" id="editEmail" class="form-control rounded-4 opacity-50 mt-3"
+                        placeholder="mail@gmail.com">
+                </div>
+                <div class="col-md-6">
+                    <label for="editMobileNumber" class="required">Mobile Number </label>
+                    <input type="text" id="editMobileNumber" class="form-control rounded-4 opacity-50  mt-3"
+                        placeholder="enter mobile number ">
+                </div>
+            </div>
+            <div class="row  mt-4 ">
+                <div class="col-md-6">
+                    <label for="editDob" class="required">Date of Birth </label>
+                    <input type="date" id="editDob" class="form-control rounded-4 opacity-50 mt-3">
+                </div>
+
+
+                <div class="col-md-6">
+                    <label for="gender" class="required mb-2">Gender </label>
+                    <div class="mt-3">
+                        <input type="radio" id="editMaleRadio" class="form-check-input rounded-4"
+                            name="gender" value="male">
+                        <label class="form-check-label" for="editMaleRadio">Male</label>
+                        <input type="radio" id="editFemaleRadio" class="form-check-input rounded-4"
+                            name="gender" value="female">
+                        <label class="form-check-label" for="editFemaleRadio">Female</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-12 mt-4 form-control-div">
+                <label for="editqualifications" class="form-label required">Qualifications </label>
+                <input type="text" class="form-control rounded-4 opacity-50 mt-3" id="editqualifications"
+                    placeholder="enter qualifications">
+            </div>
+            <div class="col-md-12 mt-4">
+                <label for="editAddress" class="form-label required">Address </label>
+                <input type="text" class="form-control rounded-4 opacity-50 mt-3" id="editAddress"
+                    placeholder="enter address">
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <label for="editCountry" class="required">Country </label>
+                    <select name="editcountry" id="editCountry"
+                        class="form-control rounded-4 form-select mt-3">
+                        <option value="" selected disabled></option>
+                        <option>United States</option>
+                        <option>United Kingdom</option>
+                        <option>France</option>
+                        <option>India</option>
+                        <option>Brazil</option>
+                        <option>Australia</option>
+                        <option>Canada</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="editState" class="required">State</label>
+                    <select name="edit" id="editState" class="form-control rounded-4 form-select mt-3">
+                        <option value="" selected disabled></option>
+                        <option>New York City</option>
+                        <option>Los Angeles</option>
+                        <option>Chicago</option>
+                        <option>Washington, D.C.</option>
+                        <option>San Francisco</option>
+                        <option>London</option>
+                        <option>Manchester</option>
+                        <option>Birmingham</option>
+                        <option>Edinburgh</option>
+                        <option>Liverpool</option>
+                        <option>London</option>
+                        <option>Manchester</option>
+                        <option>Birmingham</option>
+                        <option>Edinburgh</option>
+                        <option>Liverpool</option>
+                        <option>Berlin</option>
+                       
+                    </select>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <label for="editCity" class="required">City</label>
+                    <select name="editCity" id="editCity" class="form-control rounded-4 form-select mt-3">
+                        <option value="" selected disabled></option>
+                     
+                        <option>Kalyan</option>
+                        <option>Bangalore</option>
+                        <option>Electronic City</option>
+                        <option>Whitefield</option>
+                        <option>Jayanagar</option>
+                        <option>Indiranagar</option>
+                        <option>Chennai</option>
+                        <option>Anna Nagar</option>
+                        <option>T. Nagar</option>
+                        <option>Velachery</option>
+                        <option>Adyar</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="editPin" class="required">Pin/Zip</label>
+                    <input type="text" id="editPin" class="form-control rounded-4 opacity-50 mt-3 mb-3"
+                        placeholder="enter pin\zip">
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6 form-control-div">
+                    <label for="editUsername" class="required">Username</label>
+                    <input type="text" id="editUsername" placeholder="enter username"
+                        class="form-control rounded-4 opacity-50 mt-3 mb-3">
+
+                </div>
+                <div class="col-md-6 form-control-div">
+                    <label for="editPassword" class="required">Password</label>
+                    <input type="password" id="editPassword" class="form-control rounded-4 opacity-50 mt-3 mb-3"
+                        placeholder="enter password">
+                </div>
+                <div class="row mt-4 pb-3 ">
+                    <div class="gap-0 column-gap-3 d-flex justify-content-end">
+                        <button type="button" class="cancel-btn p-3 button rounded-4"
+                            onclick="editEmployeeUpdateCancel()">
+                            Cancel
+                        </button>
+                        <button class="save-btn p-3 button rounded-4" type="button" id="updateSubmissionBtn">
+                            Save Changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

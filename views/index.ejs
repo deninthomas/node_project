@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- header -->
+<%-include("header")%>
+<body>
+    <div class="container-fluid">
+        <div class="banner">
+           <!-- dashBoard -->
+           <%-include("dashBoard")%>
+            <div class="cover-page">
+                <!-- coverPageHead -->
+                <%-include("coverPageHead")%>
+
+                <!-- table-title -->
+                <%-include("tableTitle")%>
+                
+                <!-- table -->
+                <%-include("table")%>
+
+                <!-- pagination -->
+                <%-include("pagination")%>
+
+
+                <!-- page-footer -->
+                <%-include("pageFooter")%>
+            </div>
+        </div>
+
+        <!-- Add-Employee-Form -->
+
+        <div class="container-fluid col">
+            <!-- addEmployeeForm -->
+            <%-include("addEmployeeForm")%>
+        </div>
+        <!-- add-employee-successful-popup -->
+        <%-include("addEmployee-successFull-modal")%>
+        <!-- add-employee-successful-popup -->
+
+
+
+        <!-- Edit-Employee-form -->
+        <div class="container-fluid col">
+            <%-include("editForm")%>
+        </div>
+
+        <!-- edit-employee-successful-popup -->
+        <%-include("editSuccessModal")%>
+        <!-- edit-employee-successful-popup -->
+
+        <!-- delete-confirmation-popup -->
+        <%-include("deletePopup")%>
+        <!-- \\delete-confirmation-popup\\ -->
+
+
+        <!-- overlay -->
+        <%-include("overlay")%>
+        <!-- \\overlay\\ -->
+
+
+
+
+        <!-- deleted employee successfully -->
+        <%-include("employeeDeletedPopup")%>
+        <!-- \\deleted employee successfully\\ -->
+
+        <script src="/assets/javascript/script.js"></script>
+        <script src="/assets/javascript/employee.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+</body>
+
+</html>

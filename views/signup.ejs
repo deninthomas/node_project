@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/loginPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>signup Page</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-actions">
+            <div class="login-header">
+                <h1>Signup</h1>
+                <h5>Employee Management System</h5>
+            </div>
+
+            <form id="login-form" action="/signup" method="POST">
+
+                <div class="input-row">
+                    <label for="name">UserName</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your Name" required autocomplete="off">
+                </div>
+
+
+                <div class="input-row">
+                    <label for="password">Password</label>
+                    <input type="password"  name="password" id="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="sign-in" id="signIn">Sign Up</button>
+            </form>
+
+            <p class="sign-up-prompt">Already have an Account? <a href="/login" class="sign-up">Login Here</a></p>
+        </div>
+        <!-- <div class="login-image">
+            <img src="/Assets/images/signUpImg.png" alt="">
+        </div> -->
+    </div>
+</body>
+<script src="/assets/javascript/script.js"></script>
+
+</html>
