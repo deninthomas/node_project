@@ -625,7 +625,7 @@ function editEmployeeUpdateCancel() {
 
 function viewEmployeeBtn(id) {
   const viewEmployeeButton = document.getElementById("viewEmployeeBtn");
-  // window.location.href = `employee-details.html?id=${id}`;
+ 
   window.location.href = `/view-employee/${id}`;
 }
 
@@ -792,8 +792,7 @@ function open_delete_employee(id) {
   overlay_close.style.display = "block";
   const deleteButton = document.getElementById("deleteConfirmation");
   deleteButton.addEventListener("click", () => {
-    // var list = document.getElementById("list");
-    // list.style.display = "none";
+   ;
     deletedEmployee();
     deleteDataFromAPI(id);
   });
