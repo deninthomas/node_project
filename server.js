@@ -113,5 +113,5 @@ app.post("/login", async (req, res) => {
 });
 // Hosting-----------------------------------------
 app.listen(port, () => {
-  console.log(`Server Running in the port:${port}`);
+  console.log(`Server Running in the port:http://localhost:${port}`);
 });
