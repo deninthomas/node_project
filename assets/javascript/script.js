@@ -782,15 +782,8 @@ function closeDeletedEmployee() {
 function close_delete_employee() {
   var delete_btn = document.getElementById("delete_employee");
   delete_btn.style.display = "none";
-  // var overlay_close = document.getElementsByClassName("overlay")[0];
-  // overlay_close.style.display = "none";
-  // var list = document.getElementById("list");
-  // list.style.display = "none";
+
 }
-// function closeDelConfi() {
-//   var delete_btn = document.getElementById("delete_employee");
-//   delete_btn.style.display = "none";
-// }
 
 function open_delete_employee(id) {
   var delete_btn = document.getElementById("delete_employee");
