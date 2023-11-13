@@ -32,7 +32,7 @@ app.use(
   })
 );
 
-//------------------ejs-----------------------------------------------
+//------------------ejs--------------
 app.set("view engine", ejs);
 app.use("/assets", express.static(path.resolve(__dirname, "assets")));
 app.use("/uploads", express.static(path.resolve(__dirname, "uploads")));
@@ -111,7 +111,7 @@ app.post("/login", async (req, res) => {
     res.send("Error while logging in");
   }
 });
-// Hosting-----------------------------------------
+// Hosting--------
 app.listen(port, () => {
   console.log(`Server Running in the port:http://localhost:${port}/login`);
 });

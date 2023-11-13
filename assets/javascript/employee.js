@@ -6,22 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const employeeOverlay = document.getElementById('editEmployeeOverlay');
     const employeeCloseButton = document.getElementById('editEmployeeCloseBtn');
     const employeeDelete = document.getElementById('employeeDetailsPageEdit');
-    // const employeeModal = document.getElementById('modalEmployee');
-
-    // employeeEdit.addEventListener('click', () => {
-    //     employeeEditForm.style.display = 'block';
-    //     employeeOverlay.style.display = 'block';
-    // });
+ 
 
     employeeCloseButton.addEventListener('click', () => {
         employeeEditForm.style.display = 'none';
         employeeOverlay.style.display = 'none';
     })
 
-    // employeeDelete.addEventListener('click', () => {
-    //     employeeModal.style.display = 'block';
-    // })
-
+ 
 });
 
 function calculateAge(birthDate) {
@@ -70,14 +62,7 @@ function calculateAge(birthDate) {
 
 
   
-  // Example usage:
-//   const birthDate = "1990-05-15"; // YYYY-MM-DD format
-//   const age = calculateAge(birthDate);
-//   console.log(`You are ${age} years old.`);
-  
 
-// let params = new URLSearchParams(document.location.search);
-// let employeeid = params.get("id");
 function retrieveAndUseIdFromUrl(url) {
     console.log(url)
     const regex = /\/view-employee\/([^/]+)$/;

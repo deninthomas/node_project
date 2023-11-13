@@ -62,29 +62,8 @@ function togglePosition(id) {
   });
 }
 
-// function togglePosition() {
-//     const list = document.querySelector("#list"); // Replace with your actual list selector
 
-//     const toggleListDisplay = function(event) {
-//         const buttonRect = event.target.getBoundingClientRect();
-//         list.style.top = (buttonRect.bottom + 10) + "px";
 
-//         if (list.style.display === 'none' || list.style.display === '') {
-//             list.style.display = "block";
-//         } else {
-//             list.style.display = "none";
-//         }
-
-//         event.stopPropagation(); // Prevent the click event from bubbling up
-//     };
-
-// //         document.addEventListener("click", function (event) {
-// //             if (!list.contains(event.target)) {
-// //                 list.style.display = "none";
-// //             }
-
-//     return { toggleListDisplay, closeListOnClickOutside };
-// }
 
 // function for clear the function
 function clearForm() {
@@ -167,8 +146,7 @@ async function showEmployees() {
       ).innerHTML = `<p>of ${data.length}</p>`;
       selectNum = document.getElementById("list-num").value;
       console.log(selectNum);
-      // const start = itemsPerPage * (CurrentPage - 1);
-      // const end = Math.min(itemsPerPage * CurrentPage, data.length);
+    
       Display(employees);
       return pageCount;
     });
@@ -176,10 +154,7 @@ async function showEmployees() {
 
 //****************Employees to be shown*****************/
 
-// storing data on local server by submitting the add form button
-// const addNewEmployee = document.getElementById('saveChangesAddFormBtn');
-// addNewEmployee.addEventListener('click', (event) => {
-//     event.preventDefault(); // Prevent the form from submitting normally
+
 function submitForm(event) {
   event.preventDefault();
 
@@ -242,18 +217,8 @@ function submitForm(event) {
         showEmployees();
         addedEmployee();
         closeAddForm();
-        // // Image upload
-        // const uploadImage = document.getElementById("input-file");
-        // const formData = new FormData();
-        // formData.append("image", uploadImage.files[0]);
-
-        // fetch(`http://localhost:3000/api/employees/image`, {
-        //   method: "POST",
-        //   body: formData,
-        // }).then((res) => {
-        //   console.log("Image uploaded:", res);
-
-        // });
+        
+     
       })
       .catch((error) => {
         console.error("Error adding employee:", error);
@@ -643,13 +608,7 @@ function editEmployeeForm(id) {
             showEmployees();
           })
 
-          // fetch(`http://localhost:5001/api/employees/${id}/image`, {
-          //   method: "PUT",
-          //   body: formData,
-          // })
-          //   .then((data) => {
-
-          //   })
+         
           .catch((error) => {
             console.error("Error adding employee:", error);
           });
@@ -722,19 +681,7 @@ function displayPagination(totalPages) {
 }
 //end of pagination
 
-// search employee through search bar
-// function searchEmployee() {
-//   let searchValue = document.getElementById("searchEmployee").value;
-//   searchValue = searchValue.toLowerCase();
-//   let rows = document.getElementsByTagName("tr");
-//   for (let i = 0; i < rows.length; i++) {
-//     if (!rows[i].innerHTML.toLowerCase().includes(searchValue)) {
-//       rows[i].style.display = "none";
-//     } else {
-//       rows[i].style.display = "table-row";
-//     }
-//   }
-// }
+
 
 async function searchEmployee() {
   const searchBar = document.getElementById("searchEmployee").value;
