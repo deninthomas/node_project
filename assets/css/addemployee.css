@@ -1,0 +1,250 @@
+*
+{
+    --border_color:rgba(182, 187, 199, 1);
+    --text_color:rgba(148, 157, 185, 1);
+}
+/* popup card */
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:var(   --secondary_bg_color);
+    padding: 30px;
+    /* display: none; */
+}
+.cardbg{
+    border-radius:22px;
+    width: 50%;
+    padding: 30px;
+    background-color: var(--primary_color);
+}
+.headerform{
+    color: var(--primary_text_color);
+}
+.image_picker{
+    cursor: pointer;
+    padding: 0.75rem;
+    position: relative;
+    flex: 1;
+}
+.fw-bold.hide{
+    display: block;
+}
+.fw-bold.show{
+    display: none;
+}
+.imageUploadSection{
+    display: flex;
+    align-items: center;
+}
+.col .image_picker{
+    border: 1px dashed var(--border_color);
+    color: var(--secondary_color);
+}
+.col .image_picker h4{
+    font-size: 0.75rem;
+}.col .image_picker p{
+    font-size: .75rem;
+}
+p{
+    margin-bottom: 0;
+}
+.image_picker .material-symbols-rounded {
+    font-size: 2.5rem;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+#imgUpload{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+label{
+    color: var(--primary_text_color);
+    font-size: 0.75rem;
+}
+.form-control{
+    border-radius: 0.75rem;
+    border: 1px solid var(--border_color);
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+    color: var(--primary_text_color);
+    font-weight: 700;
+}
+input[type=text]:focus{
+    border:1px solid var(--border_color);
+    box-shadow: none;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+input[type=password]:focus{
+    border:1px solid var(--border_color);
+    box-shadow: none;
+}
+input[type=tel]:focus{
+    border:1px solid var(--border_color);
+    box-shadow: none;
+}
+.form-select:focus{
+    border:1px solid var(--border_color);
+    box-shadow: none;
+}
+.form-select{
+    border-radius: .75rem;
+}
+input[type=date]:focus{
+    border:1px solid;
+    box-shadow: none;
+}
+input[type=radio]:focus{
+    box-shadow: none;
+}
+.formButton{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.btn:focus{
+    box-shadow: none;
+}
+.closebutton{
+    background-color: rgba(250, 249, 255, 1);
+    color: var(--primary_text_color);
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+}
+.form-select{
+    color:var(--primary_text_color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.28px;
+    padding: 10px;
+}
+.close{
+    padding: 5px;
+    border-radius: 10px;
+    background: #F4F7FE;
+    display: flex;
+    margin-left: unset;
+    border: none;
+}
+.close .material-symbols-outlined{
+    font-size: 20px;
+    color: var(--secondary_color);
+}
+.row.cardbgHeader {
+    align-items: center;
+}
+#addempimgpreview img{
+    width:100px;
+    height: 100px;
+    border: 1px grey dashed;
+    padding: 5px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+/* edit employee */
+/* .editImgUploadbtnParent{
+    position: relative;
+} */
+#editImgUpload{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.employeeProfilePic{
+    width: 140px;
+    height: 134px;
+    border: 2px dashed var(--text_color);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.employeeProfilePic img{
+    width: 102px;
+    height: 102px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.imgchangebtn{
+    background-color:rgba(234, 230, 251, 1);
+    color: var(--secondary_color);
+    padding: 15px 20px;
+    font-weight: 700;
+    border-radius: 15px;
+    position: relative;
+}
+.col.imgeditbtn{
+    flex: 0;
+}
+#editImgUpload{
+    opacity: 0;
+}
+.img_update{
+    align-items: center;
+}
+
+/* Modal */
+.empAddedModal  .modal{
+    background-color:rgb(0, 0, 0,0.5);
+}
+.editEmployeePopup .modal{
+    background-color:rgb(0, 0, 0,0.5);
+}
+.editModal .modal{
+    background-color:rgb(0, 0, 0,0.5);
+}
+.deletemodal .modal{
+    background-color:rgb(0, 0, 0,0.5);
+}
+.deletemodal .modal-content{
+    border-radius: 22px;
+}
+.deletemodal .modal-header{
+    color: var(--primary_text_color);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.48px;
+    }
+.deletemodal .modal-body{
+    color:var(--primary_text_color);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: -0.36px;
+    }
+.deletemodal .modal-header{
+    border-bottom: none;
+}
+.modal-footer{
+    border-top: none;
+}
+/* popup */
+.cardbg{
+    margin: auto;
+}
+/* validation */
+.validationText{
+    display: none;
+}

@@ -1,73 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<!-- header -->
-<%-include("header")%>
-<body>
-    <div class="container-fluid">
-        <div class="banner">
-           <!-- dashBoard -->
-           <%-include("dashBoard")%>
-            <div class="cover-page">
-                <!-- coverPageHead -->
-                <%-include("coverPageHead")%>
-
-                <!-- table-title -->
-                <%-include("tableTitle")%>
-                
-                <!-- table -->
-                <%-include("table")%>
-
-                <!-- pagination -->
-                <%-include("pagination")%>
+<!-- include header -->
+<%- include('include/_header')%>
+<!-- /include header -->
 
 
-                <!-- page-footer -->
-                <%-include("pageFooter")%>
-            </div>
-        </div>
+<!-- include sidebar -->
+<%- include('include/_sidebar')%>
+<!-- /include sidebar -->
 
-        <!-- Add-Employee-Form -->
-
-        <div class="container-fluid col">
-            <!-- addEmployeeForm -->
-            <%-include("addEmployeeForm")%>
-        </div>
-        <!-- add-employee-successful-popup -->
-        <%-include("addEmployee-successFull-modal")%>
-        <!-- add-employee-successful-popup -->
+<!-- include contentheader -->
+<%- include('include/_contentheader')%>
+<!-- /include contentheader -->
 
 
-
-        <!-- Edit-Employee-form -->
-        <div class="container-fluid col">
-            <%-include("editForm")%>
-        </div>
-
-        <!-- edit-employee-successful-popup -->
-        <%-include("editSuccessModal")%>
-        <!-- edit-employee-successful-popup -->
-
-        <!-- delete-confirmation-popup -->
-        <%-include("deletePopup")%>
-        <!-- \\delete-confirmation-popup\\ -->
+<!-- include tablearea -->
+<%- include('include/_tablearea')%>
+<!-- /include tablearea -->
 
 
-        <!-- overlay -->
-        <%-include("overlay")%>
-        <!-- \\overlay\\ -->
+<!-- include pagination -->
+<%- include('include/_pagination')%>
+<!-- /include pagination -->
 
+<!-- include addemployee -->
+<%- include('include/_addemployee')%>
+<!-- /include addemployee -->
 
+<!-- include editemployee -->
+<%- include('include/_editemployee')%>
+<!-- /include editemployee -->
 
+<!-- include deleteemployee -->
+<%- include('include/_deleteemployee')%>
+<!-- /include deleteemployee -->
 
-        <!-- deleted employee successfully -->
-        <%-include("employeeDeletedPopup")%>
-        <!-- \\deleted employee successfully\\ -->
-
-        <script src="/assets/javascript/script.js"></script>
-        <script src="/assets/javascript/employee.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    </div>
-</body>
-
-</html>
+<!-- include footer -->
+<%- include('include/_footer')%>
+<!-- /include footer -->

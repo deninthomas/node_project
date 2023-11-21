@@ -1,0 +1,183 @@
+body{
+    background-color: #000a25;
+}
+p{
+    margin-bottom: unset;
+}
+#existinguser {
+    display: none;
+}
+
+#alertbox {
+    /* border-radius: 10px; */
+    /* background-color: #a4205a; */
+    /* width: 100%; */
+    /* height: 50px; */
+    /* position: absolute; */
+    /* height: 30px; */
+    /* top: 0; */
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.hide {
+    /* visibility: hidden;
+    opacity: 0; */
+    /* left: -33%; */
+    /* border: 2px solid red; */
+    width: 100%;
+    transition: all 800ms;
+
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+    transition: all 800ms;
+    /* left: 0; */
+    width: 100%;
+}
+
+.showborder {
+    border: 1px solid red;
+}
+
+.signupform {
+    padding: 40px 40px 35px 40px;
+}
+
+/* .signupform .signupSection {
+    margin-bottom: 40px;
+} */
+
+.removeborder {
+    border: 1px solid transparent;
+}
+.signuptext{
+    color:  #000a25 ;
+}
+.alertsession {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#alertbox p {
+    margin-bottom: 0;
+}
+.backgroundImg img{
+    /* width: 100%;
+    object-fit: cover; */
+    height: 100%;
+ }
+.logindesign{
+    box-shadow: 6px 6px 20px 1px rgb(0 0 0 / 19%); 
+    height: 500px;
+
+}
+.signupform{
+    height: 100%;
+}
+.inputBox i{
+color: #000a25;
+}
+.signupform{
+    background-color: rgb(232, 227, 227);
+    align-items: center;
+    /* opacity: 0.8; */
+}
+.signupbg button{
+    background-color: #000a25;
+}
+.signupbg button:hover{
+    color: rgb(232, 227, 227);
+    opacity: 0.9;
+}
+.signupform .loginInputFields{
+    max-width: unset;
+    width: 70%;
+}
+#userName, #loginPasswordOne, #loginPassword {
+    box-shadow: 6px 6px 20px 1px rgb(0 0 0 / 19%); 
+}
+.inputBox i{
+    font-size: 20px;
+    position: absolute;
+    right: 13px;
+    bottom: 0;
+    top: 0;
+    transform: translateY(25%);
+}
+
+.requiredAlert{
+font-size: 14px;
+color: red;
+margin-left: 15px;
+/* position: absolute; */
+}
+/* .loginInputFields{
+    position: relative;
+} */
+/* #otpSection{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+} */
+.otpButton{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.otpinput{
+    width: 60%;
+}
+.otpinput input{
+    width: 100%;
+}
+.otpBtn{
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.resendOtp{
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 500;
+}
+#emailVerification{
+    width: 100%;
+    color: #000a25;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.emailTitle{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+}
+hr{
+    height: 1px;
+    width: 80%;
+}
+.emailDef{
+    max-width: 80%;
+}
+.resendOtp a{
+    text-decoration: none;
+    color: #000a25;
+}

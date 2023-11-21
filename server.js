@@ -1,117 +1,69 @@
-const express = require("express");
-const path = require("path");
-const ejs = require("ejs");
+const express = require('express');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
+const bodyparser = require("body-parser");
+const path = require('path');
+const multer = require('multer');
+const connectDB = require('./server/database/connection');
 const bcrypt = require("bcrypt");
-const dotenv = require("dotenv").config();
 const cors = require("cors");
-const errorHandler = require("./middleware/errorHandler");
-const connectDb = require("./config/dbConnection");
-const collection = require("./models/signupModel");
-const bodyParser = require("body-parser");
 const session = require("express-session");
-const app = express();
-connectDb();
+const ejs = require('ejs');
+const nodemailer = require("nodemailer");
 
-const port = process.env.PORT || 3000;
+
+
+
+const app = express();
+
+dotenv.config({path:'config.env'})
+const PORT = process.env.PORT || 8080
+
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use("/api/employees", require("./routes/employees"));
-app.use(errorHandler);
 
 // Configure session middleware
 app.use(
-  session({
-    secret: process.env.SESSION_SECRET || "12345",
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      maxAge: 1 * 60 * 60 * 1000,
-    },
-  })
+    session({
+        secret: process.env.SESSION_SECRET || "12345",
+        resave: false,
+        saveUninitialized: true,
+        cookie: {
+            maxAge: 1 * 60 * 60 * 1000,
+            // maxAge: 1 * 60 ,
+        },
+    })
 );
 
-//------------------ejs--------------
-app.set("view engine", ejs);
-app.use("/assets", express.static(path.resolve(__dirname, "assets")));
-app.use("/uploads", express.static(path.resolve(__dirname, "uploads")));
 
-app.get("/home", isAuthenticated, (req, res) => {
-  res.render("index.ejs");
-});
+// log requests
+app.use(morgan('tiny'));
 
-app.get("/view-employee/:id", (req, res) => {
-  res.render("viewEmployee.ejs");
-});
+// mongodb connection
+connectDB();
 
-app.get("/login", (req, res) => {
-  res.render("login.ejs");
-});
+app.use(express.json());
+  
+// parse request to body-parser
+app.use(bodyparser.urlencoded({extended:true}))
 
-app.get("/signup", (req, res) => {
-  res.render("signup.ejs");
-});
+// set ejs as view engine
+app.set("view engine","ejs")
 
-// Middleware to check if a user is authenticated
-function isAuthenticated(req, res, next) {
-  if (req.session.user) {
-    return next();
-  } else {
-    res.redirect("/login");
-  }
-}
 
-// ------------Register User------------------
-app.post("/signup", async (req, res) => {
-  const data = {
-    name: req.body.name,
-    password: req.body.password,
-  };
-  console.log("User Data: ", data);
-  // Check if the user already exists
-  const existingUser = await collection.findOne({ name: data.name });
-  if (existingUser) {
-    res.send("User already exists, try another username");
-  } else {
-    // Hash the password using bcrypt
-    const saltRounds = 10;
-    const hashedPassword = await bcrypt.hash(data.password, saltRounds);
-    data.password = hashedPassword; // Replace the password with the hashed password
-    const userdata = await collection.insertMany(data);
-    console.log(userdata);
-    // session after successful signup
-    req.session.user = userdata;
-    res.redirect("/login");
-  }
-});
+// Define the storage strategy for file uploads
+const storage = multer.memoryStorage();
+// Initialize multer with the storage strategy
+const upload = multer({ storage: storage });
 
-// ----------------------Login User----------------------
-app.post("/login", async (req, res) => {
-  try {
-    const check = await collection.findOne({ name: req.body.name });
-    console.log(check);
-    if (!check) {
-      res.send("User not found");
-    } else {
-      // Compare the hashed password from the db with the plain text
-      const isPasswordMatch = await bcrypt.compare(
-        req.body.password,
-        check.password
-      );
-      if (isPasswordMatch) {
-        // Set the user session upon successful login
-        req.session.user = check;
-        res.redirect("/home");
-      } else {
-        res.send("Wrong password");
-      }
-    }
-  } catch (error) {
-    res.send("Error while logging in");
-  }
-});
-// Hosting--------
-app.listen(port, () => {
-  console.log(`Server Running in the port:http://localhost:${port}/login`);
+// load assets
+app.use('/css',express.static(path.resolve(__dirname,"assets/css")))
+app.use('/img',express.static(path.resolve(__dirname,"assets/img")))
+app.use('/js',express.static(path.resolve(__dirname,"assets/js")))
+app.use("/avatars", express.static(path.resolve(__dirname, "avatars")));
+
+
+app.use('/',require('./server/routes/router'));
+
+app.listen(PORT,()=>{
+    console.log(`Server is running on http://localhost:${PORT}`)
 });

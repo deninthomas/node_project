@@ -1,0 +1,53 @@
+  <div class="employeesList">
+                <div class="employeesHeader">
+                    <div class="employeesTitle">
+                        <h2>Employees List</h2>
+                        <select name="number" id="select" onchange="listPaginate(value)">
+                            <!-- <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option> -->
+                        </select>
+                        <p id="listCount">of 0</p>
+                    </div>
+                    <button class="btn filledButton" id="addEmployee">Add Employee</button>
+                </div>
+                <table class="employeesTable" id="employeesData">
+                    <thead>
+                        <tr class="tableHeading">
+                            <th><select>
+                                    <option selected value="Sl.No">Sl.No</option>
+                                </select></th>
+                            <th><select>
+                                    <option selected value="Name">Name</option>
+                            
+                                </select></th>
+                            <th><select>
+                                    <option selected value="Email">Email</option>
+                                </select></th>
+                            <th><select>
+                                    <option selected value="Phone">Phone</option>
+                                </select></th>
+                            <th><select>
+                                    <option selected value="Gender">Gender</option>
+                                </select></th>
+                            <th><select>
+                                    <option selected value="DOB">DOB</option>
+                                </select></th>
+                            <th><select>
+                                    <option selected value="Country">Country</option>
+                                </select></th>
+                            <th><button></button></th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablebody"></tbody>
+
+                </table>
+
+            </div>

@@ -1,0 +1,118 @@
+/* a{
+    text-decoration: none;
+} */
+
+.pageTitle h6 a{
+    color: rgba(112, 126, 174, 1);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+}
+.employeeProfile{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.profileView{
+    width: 60%;
+    padding: 15px;
+    background-color: var(--primary_color);
+    border-radius: 22px;
+}
+.cover{
+    width: 100%;
+    height: 180px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+.profileCover{
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+}
+.profilePhoto{
+    position: absolute;
+    border: 5px solid var(--primary_color);
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    object-fit: cover;
+    bottom: -50px;
+}
+.userName{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.userName h5{
+    color:var(--primary_text_color);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.4px;
+}
+.userName small{
+    color: rgba(112, 126, 174, 1);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.28px;
+    }
+    .profileDetails{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .gridpro{
+        border-radius: 16px;
+        background-color: var(--primary_color);
+        box-shadow: 0px 18px 40px 0px rgba(112, 144, 176, 0.12);
+        padding: 20px 20px 25px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+    .gridpro small{
+        color: #707EAE;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: -0.28px;
+        /* display: grid;
+        margin-bottom: 7px; */
+    }
+    .gridpro p{
+        color:var(--primary_text_color);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -0.32px;
+    }
+    .profilecol_3{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+    }
+    .profilecol_2{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+    }
+    .profileButtons{
+        display: flex;
+        justify-content: end;
+        padding: 20px;
+        gap: 10px;
+    }
+    .dltbtn.filledButton{
+        background-color: rgba(235, 80, 108, 1);
+    }

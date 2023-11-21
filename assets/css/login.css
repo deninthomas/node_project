@@ -1,0 +1,121 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'DM Sans', sans-serif; */
+    font-family:'Roboto', sans-serif;
+    
+}
+body{
+    min-height: 100vh;
+}
+.logindesign{
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+    /* border: 2px solid yellow; */
+}
+.loginBox{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* border: 2px solid; */
+    font-weight: 400;
+}
+input{
+    width: 100%;
+    border-radius: 30px;
+    border: none;
+    background-color:#6c6b692e;
+}
+::placeholder{
+    font-weight: 400;
+    color:rgb(91, 90, 90)
+}
+.loginInputFields{
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    gap: 20px;
+    font-weight: 500;
+    /* position: relative; */
+    /* border: 2px solid; */
+}
+.loginInputFields input{
+padding: 8px 35px 8px 15px;
+}
+.buttonArea{
+    width: 100%;
+}
+.btn{
+    background-color: blue;
+    color: white;
+    font-weight: 500;
+    border-radius: 30px;
+    width: 100%;
+    padding: 10px;
+
+}
+.forgotPaswd{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    display: flex;
+    justify-content: end;
+}
+.signupSection{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.backgroundImg{
+    width: 50%;
+    /* border: 2px solid rgb(242, 10, 10); */
+    height: 100%;
+}
+.backgroundImg img{
+   width: 100%;
+   object-fit: cover;
+}
+#incorrectPassword{
+    color: red;
+    display: none;
+}
+.container-fluid{
+    display: flex;
+    background-color: #000a25;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+:focus-visible{
+    outline: inherit;
+    background-color: rgb(189, 189, 189);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s;
+  /* background-color: red; */
+}
+.inputBox{
+    position: relative;
+}
+.inputBox i{
+    font-size: 20px;
+    position: absolute;
+    right: 13px;
+    bottom: 0;
+    top: 0;
+    transform: translateY(50%);
+}
+#lockOpen{
+    display: none;
+    cursor: context-menu;
+}
+#lock{
+    cursor: context-menu;  
+}

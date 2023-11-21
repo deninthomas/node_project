@@ -1,0 +1,211 @@
+<!-- popup card add employee-->
+<!-- <form id="form" method="post"> -->
+<form id="addEmployeeForm">
+    <div class="addEmployeePopup">
+        <div class="modal" id="myPopup">
+            <div class="cardbg "> <!--modal modal-dialog-centered-->
+                <div class="row cardbgHeader">
+                    <div class="col-11">
+                        <h4 class="headerform fw-bold">Add Employee</h4>
+                    </div>
+                    <div class="col-1"> <button type="button" id="addEmployeePopupClose" class="close"><span
+                                class="material-symbols-outlined">
+                                close
+                            </span></button>
+                    </div>
+                </div>
+                <div class="col text-center mt-3">
+                    <div class="imageUploadSection">
+                        <div id="addempimgpreview"></div>
+                        <div class="image_picker bg-light rounded-3" id="imgpreview">
+                            <span class="material-symbols-outlined">
+                                upload
+                            </span>
+                            <h4 class="fw-bold hide">Upload Image</h4>
+                            <h4 class="fw-bold show">Change Image</h4>
+                            <p class="text-muted">PNG, JPG files are allowed</p>
+                            <input type="file" id="imgUpload">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-4">
+                        <label for="salutation" class="form-label fw-bold">Salutation <span
+                                class="requiredstar text-danger">*</span></label>
+                        <select class="form-select" aria-label="Default select example" id="salutation">
+                            <option selected value="">Select</option>
+                            <option value="Mr">Mr.</option>
+                            <option value="Mrs">Mrs.</option>
+                            <option value="Miss">Miss.</option>
+                        </select>
+                        <label for="salutation" class="form-label text-danger validationText"
+                            id="salutationValidation">Salutation is required</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="firstname" class="form-label fw-bold">First name <span
+                                class="requiredstar text-danger">*</span></label>
+                        <input type="text" id="firstname" placeholder="first name" class="form-control capitalize">
+                        <label for="firstname" class="form-label text-danger validationText"
+                            id="firstnameValidation">First name is required</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="lastname" class="form-label fw-bold">Last name <span
+                                class="requiredstar text-danger">*</span></label>
+                        <input type="text" id="lastname" placeholder="last name" class="form-control capitalize">
+                        <label for="lastname" class="form-label text-danger validationText" id="lastnameValidation">Last
+                            name is required</label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-6">
+                        <label for="email" class="form-label fw-bold">Email Address <span
+                                class="requiredstar text-danger">*</span></label>
+                        <input type="text" id="email" placeholder="mail@simmmple.com" class="form-control">
+                        <label for="email" class="form-label text-danger validationText" id="emailValidation">Email is
+                            required</label>
+                    </div>
+                    <div class="col-sm-6 placeholdercolor">
+                        <label for="mobile" class="form-label fw-bold">Mobile Number <span
+                                class="requiredstar text-danger">*</span></label>
+                        <input type="tel" id="mobile" placeholder="enter mobile number" class="form-control"
+                            maxlength="10">
+                        <label for="mobile" class="form-label text-danger validationText" id="mobileValidation">Mobile
+                            number is required</label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-6">
+                        <label for="datepicker" class="form-label fw-bold">Date of Birth <span
+                                class="requiredstar text-danger">*</span></label>
+                        <input type="date" id="datepicker" class="form-control">
+                        <label for="datepicker" class="form-label text-danger validationText"
+                            id="datepickerValidation">Please select Date of Birth</label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-label fw-bold">Gender <span class="requiredstar text-danger">*</span></label>
+                        <div class="genderradiobox p-1">
+                            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefaultMale"
+                                value="Male" checked>
+                            <label class="form-check-label col-2" for="flexRadioDefaultMale">
+                                Male
+                            </label>
+                            <input class="form-check-input" type="radio" name="gender" id="flexRadioDefaultFemale"
+                                value="Female">
+                            <label class="form-check-label col-2" for="flexRadioDefaultFemale">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="address" class="form-label fw-bold">Address <span
+                                class="requiredstar text-danger">*</span></label>
+                        <input type="text" id="address" placeholder="enter address" class="form-control capitalize">
+                        <label for="address" class="form-label text-danger validationText"
+                            id="addressValidation">Address is required</label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="qualification" class="form-label fw-bold">Qualification <span
+                                class="requiredstar text-danger">*</span></label>
+                        <input type="text" id="qualification" placeholder="Qualification"
+                            class="form-control capitalize">
+                        <label for="qualification" class="form-label text-danger validationText"
+                            id="qualificationValidation">Qualification is required</label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-6">
+                        <label for="country" class="form-label fw-bold">Country <span
+                                class="requiredstar text-danger">*</span></label>
+                        <select class="form-select countrypicker" aria-label="Default select example" id="country">
+                            <option selected value="">Select</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Germany">Germany</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                        </select>
+                        <label for="country" class="form-label text-danger validationText" id="countryValidation">Please
+                            select country</label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="state" class="form-label fw-bold">State <span
+                                class="requiredstar text-danger">*</span></label>
+                        <select class="form-select statepicker" aria-label="Default select example" id="state">
+                            <option selected value="">Select</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Tamilnadu">Tamilnadu</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="New South Wales">New South Wales</option>
+                            <option value="California">California</option>
+                            <option value="Wales">Wales</option>
+                            <option value="Bavaria">Bavaria</option>
+                        </select>
+                        <label for="state" class="form-label text-danger validationText" id="stateValidation">Please
+                            select state</label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-6">
+                        <label for="city" class="form-label fw-bold">City <span
+                                class="requiredstar text-danger">*</span></label>
+                        <input type="text" id="city" placeholder="enter city" class="form-control capitalize">
+                        <label for="city" class="form-label text-danger validationText" id="cityValidation">City
+                            name is required</label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="zip" class="form-label fw-bold">Pin/Zip<span
+                                class="requiredstar text-danger">*</span></label>
+                        <input type="text" id="zip" placeholder="enter zip/pin" class="form-control">
+                        <label for="zip" class="form-label text-danger validationText" id="zipValidation">Pin/Zip is
+                            required</label>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm-6">
+                        <label for="userName" class="form-label fw-bold">User Name <span
+                                class="requiredstar text-danger">*</span></label>
+                        <input type="text" id="userName" placeholder="user name" class="form-control">
+                        <label for="userName" class="form-label text-danger validationText" id="userNameValidation">User
+                            name is required</label>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="password" class="form-label fw-bold">Password<span
+                                class="requiredstar text-danger">*</span></label>
+                        <input type="password" id="password" placeholder="password" class="form-control">
+                        <label for="password" class="form-label text-danger validationText"
+                            id="passwordValidation">Password is required</label>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col formButton">
+                        <button type="button" id="addEmployeecancelButton" class="btn closebutton">Cancel</button>
+                        <button type="button" id="addEmpSubmit" class="btn filledButton">Add Employee</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- employee added succesfully Modal -->
+<div class="empAddedModal">
+    <div class="modal" id="empAdded">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Employee Added Succesfully!!
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button onclick="closeEmpAddedModal()" type="button" id="empAddclose" class="btn closebutton"
+                        data-bs-dismiss="modal">Okay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
